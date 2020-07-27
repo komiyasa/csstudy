@@ -1,52 +1,27 @@
 ﻿using System;
+using System.Dynamic;
 
-//基本クラス
-class Music
+class SampleClass
 {
-    int type = 0;
-    protected string name = "Music";
-
-    public void SetType(int type)
-    {
-        this.type = type;
-    }
-
-    public virtual void BaseInfo()
-    {
-        Console.WriteLine(type);
-        Console.WriteLine(name);
-    }
-}
-
-//継承クラス
-class Song : Music
-{
-    public override void BaseInfo()
-    {
-        this.name = "Song";
-        base.BaseInfo();
-    }
-}
-
-class Music2 : Music
-{
-    public override void BaseInfo()
-    {
-        Console.WriteLine("Mudic");
-    }
+    public int num1 { get; set; } = 10;
+    public int num2 { get; set; } = 0;
+    public int warizan { get; set; }
 }
 
 class MainClass
 {
     static void Main()
     {
-        Song s = new Song();
-        s.BaseInfo();
+        try
+        {
+            var test = new SampleClass();
+            test.warizan = test.num1 / test.num2;
+            Console.WriteLine(test.warizan);
+        }
 
-        Music2 m2 = new Music2();
-        m2.BaseInfo();
-
-        Music m = new Music();
-        m.BaseInfo();
+        catch
+        {
+            Console.WriteLine("例外発生");
+        }
     }
 }
