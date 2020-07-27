@@ -1,23 +1,40 @@
 ﻿using System;
 
-namespace CSSampleApp
+class Music
 {
-    class Program
+    public virtual void BaseInfo()
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-
-            Mycar car = new Mycar();
-            Console.WriteLine(car.num);
-            Console.WriteLine(car.name);
-
-        }
+        Console.WriteLine("Music");
     }
+}
 
-    class Mycar
+class Song : Music
+{
+    public override void BaseInfo()
     {
-        public int num = 6;
-        public string name = "komiyasa"; 
+        Console.WriteLine("Song");
+    }
+}
+
+class Music2 : Music
+{
+    public override void BaseInfo()
+    {
+        Console.WriteLine("Mudic");
+    }
+}
+
+class MainClass
+{
+    static void Main()
+    {
+        Song s = new Song();
+        s.BaseInfo();
+
+        Music2 m2 = new Music2();
+        m2.BaseInfo();
+
+        Music m = new Music();
+        m.BaseInfo();
     }
 }
