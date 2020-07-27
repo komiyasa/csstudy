@@ -3,9 +3,18 @@
 //基本クラス
 class Music
 {
+    int type = 0;
+    protected string name = "Music";
+
+    public void SetType(int type)
+    {
+        this.type = type;
+    }
+
     public virtual void BaseInfo()
     {
-        Console.WriteLine("Music");
+        Console.WriteLine(type);
+        Console.WriteLine(name);
     }
 }
 
@@ -14,7 +23,8 @@ class Song : Music
 {
     public override void BaseInfo()
     {
-        Console.WriteLine("Song");
+        this.name = "Song";
+        base.BaseInfo();
     }
 }
 
