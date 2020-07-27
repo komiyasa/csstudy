@@ -1,5 +1,6 @@
 ﻿using System;
 
+//基本クラス
 class Music
 {
     public virtual void BaseInfo()
@@ -8,6 +9,7 @@ class Music
     }
 }
 
+//継承クラス
 class Song : Music
 {
     public override void BaseInfo()
